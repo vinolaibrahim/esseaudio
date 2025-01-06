@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Playback</title>
+</head>
+<body>
+    <audio id="audio" autoplay>
+        <source src="https://cdn.whyp.it/addd5adf-6e5b-4f34-9443-ee31fb10868c.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const audio = document.getElementById('audio');
+
+        // Close the page when the audio ends
+        audio.addEventListener('ended', () => {
+            window.close();
+        });
+
+        // Fallback to close after 5 seconds if audio hasn't ended
+        setTimeout(() => {
+            window.close();
+        }, 5000);
+    </script>
+</body>
+</html>
